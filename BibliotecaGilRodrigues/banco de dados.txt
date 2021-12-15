@@ -1,0 +1,52 @@
+CREATE TABLE `admin` (
+  `id` bigint NOT NULL auto_increment,
+  `login` varchar(255) DEFAULT NULL,
+  `senha` varchar(255) DEFAULT NULL,
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `alunointegral` (
+  `id` bigint NOT NULL auto_increment,
+  `email` varchar(255) DEFAULT NULL,
+  `matricula` varchar(255) DEFAULT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `nomeResponsavel` varchar(255) DEFAULT NULL,
+  `telefone` varchar(255) DEFAULT NULL,
+  `telefoneResponsavel` varchar(255) DEFAULT NULL,
+  `turma` varchar(255) DEFAULT NULL, 
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `alunosubsequente` (
+`id` bigint NOT NULL auto_increment,
+  `cpf` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `matricula` varchar(255) DEFAULT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `telefone` varchar(255) DEFAULT NULL,
+  `turma` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `emprestimo` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `atrasado` bit(1) DEFAULT NULL,
+  `dataDeDevolucao` date DEFAULT NULL,
+  `dataDeDevolucaoPrevista` date DEFAULT NULL,
+  `dataDeEmprestimo` date DEFAULT NULL,
+  `nomeAluno` varchar(255) DEFAULT NULL,
+  `idLivro` bigint DEFAULT NULL,
+  `tituloLivro` varchar(255) DEFAULT NULL,
+  `matricula` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+CREATE TABLE `livro` (
+`id` bigint NOT NULL auto_increment,
+  `autor` varchar(255) DEFAULT NULL,
+  `disponivel` int DEFAULT NULL,
+  `quantidade` int DEFAULT NULL,
+  `titulo` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
